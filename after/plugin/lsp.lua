@@ -3,8 +3,18 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 local lspconfig = require('lspconfig')
+lspconfig.ccls.setup {
+    init_options = {
+        index = { threads = 2 }
+    },
+    on_attach = function(client)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+    end
+}
+-- lspconfig.clangd.setup {}
 lspconfig.lua_ls.setup {}
-lspconfig.perlnavigator['cmd'] = 'perlnavigator'
+lspconfig.gopls.setup {}
 lspconfig.perlnavigator.setup {
     cmd = { "perlnavigator" }
 }
