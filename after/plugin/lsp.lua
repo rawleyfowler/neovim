@@ -7,6 +7,7 @@ lspconfig.ccls.setup {
     init_options = {
         index = { threads = 2 }
     },
+
     on_attach = function(client)
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
