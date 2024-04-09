@@ -1,6 +1,5 @@
-vim.cmd.colorscheme("tokyonight")
+require('rose-pine').setup({
+    variant = 'dawn',
+})
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+vim.cmd.colorscheme("rose-pine")
