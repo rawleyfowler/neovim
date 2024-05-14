@@ -13,12 +13,22 @@ lspconfig.ccls.setup {
         client.server_capabilities.documentRangeFormattingProvider = false
     end
 }
--- lspconfig.clangd.setup {}
+lspconfig.clangd.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.gopls.setup {}
-lspconfig.perlnavigator.setup {
-    cmd = { "perlnavigator" }
+lspconfig.perlpls.setup {
+    settings = {
+        perl = {
+            perlcritic = { enabled = true },
+            syntax = { enabled = true }
+        },
+        single_file_support = true,
+        flags = {
+            debounce_text_changes = 100,
+        }
+    }
 }
+lspconfig.clojure_lsp.setup {}
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
